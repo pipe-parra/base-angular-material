@@ -27,6 +27,8 @@ import { Firestore } from 'firebase/firestore'; //este tengo dudas si sirva para
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    CoreModule,
+    SharedModule,
     MatSliderModule,
     MatPseudoCheckboxModule,
     provideFirebaseApp(()=>initializeApp(environment.firebaseConfig)),
