@@ -7,6 +7,8 @@ import { RegisterComponent } from './components/register/register.component';
 import { ResetComponent } from './components/reset/reset.component';
 //importamos el mismo modulo que hicimos nosotros el Material module
 import { MaterialModule } from '../material/material.module';
+//importar formularios Reactivos
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -18,7 +20,8 @@ import { MaterialModule } from '../material/material.module';
   imports: [
     CommonModule,
     AuthRoutingModule,
-    MaterialModule //importamos el modulo que hicimos nosotros en material.module
+    MaterialModule, //importamos el modulo que hicimos nosotros en material.module
+    ReactiveFormsModule
   ]
 })
 export class AuthModule { }
