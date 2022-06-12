@@ -4,15 +4,15 @@
     
         <mat-card-title>Registrarse</mat-card-title>
         <mat-card-content>
-            <form action="">
+            <form [formGroup]="registerForm" (ngSubmit)="registerUser($event)">
                 <mat-form-field>
-                    <input matInput placeholder="Correo Electronico" type="email" />
+                    <input matInput placeholder="Correo Electronico" type="email" formControlName="email"/>
                 </mat-form-field>
                 <mat-form-field>
-                    <input matInput placeholder="Contraseña" type="password" />
+                    <input matInput placeholder="Contraseña" type="password" formControlName="password"/>
                 </mat-form-field>
                 <mat-form-field>
-                    <input matInput placeholder="Repetir Contraseña" type="password" />
+                    <input matInput placeholder="Repetir Contraseña" type="password" formControlName="confirmpassword"/>
                 </mat-form-field>
                 <button mat-raised-button color="primary" type="submit">
                     Registrarse
