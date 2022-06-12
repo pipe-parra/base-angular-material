@@ -14,7 +14,7 @@
                 <mat-form-field>
                     <input matInput placeholder="Repetir Contraseña" type="password" formControlName="confirmpassword"/>
                 </mat-form-field>
-                <button mat-raised-button color="primary" type="submit">
+                <button mat-raised-button color="primary" type="submit" [disabled]="registerForm.invalid">
                     Registrarse
                 </button>
             </form>

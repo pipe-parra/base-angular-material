@@ -9,7 +9,7 @@ import { ResetComponent } from './components/reset/reset.component';
 import { MaterialModule } from '../material/material.module';
 //importar formularios Reactivos
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { AuthService } from 'src/app/core/services/auth/auth.service'; //se supone que con el cmabio quye hice en tsconfig.app.json al agregar los apths deberia solo poner '@core' en vez de 'src/app/core'
 
 @NgModule({
   declarations: [
@@ -21,7 +21,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     AuthRoutingModule,
     MaterialModule, //importamos el modulo que hicimos nosotros en material.module
-    ReactiveFormsModule
+    ReactiveFormsModule,
+  ],
+  providers:[
+    AuthService
   ]
 })
 export class AuthModule { }

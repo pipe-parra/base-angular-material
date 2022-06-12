@@ -18,6 +18,7 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { environment } from '../environments/environment';
+import { AuthService } from './core/services/auth/auth.service';
 
 
 @NgModule({
@@ -40,7 +41,7 @@ import { environment } from '../environments/environment';
     
 
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

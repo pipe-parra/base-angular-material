@@ -13,7 +13,9 @@ export class RegisterComponent implements OnInit {
   constructor(
     private formBuilder:FormBuilder,
     private authService:AuthService
-  ) { }
+  ) { 
+    this.buildForm(); //aca si no se inicializa en el constructor arroja error en consola
+  }
 
   buildForm(): void {
     this.registerForm = this.formBuilder.group({

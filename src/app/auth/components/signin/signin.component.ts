@@ -14,7 +14,10 @@ export class SigninComponent implements OnInit {
   constructor(
     private formBuilder:FormBuilder,
     private authService:AuthService
-  ) { }
+  ) { 
+    this.buildForm(); //si no inicializo dentro del constructor arroja error en consola
+    
+  }
 
   buildForm(): void {
     this.signinForm = this.formBuilder.group({
