@@ -12,11 +12,12 @@ import { SharedModule } from './shared/shared.module';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatPseudoCheckboxModule } from '@angular/material/core';
 //add firebase config
-import { environment } from 'src/environments/environment';
-import { provideAuth, getAuth } from '@angular/fire/auth'; //esto cambia mucho en relacion a mis tutoriales aqui tengo dudas, antes era Angular FireAuth
-import { provideFirebaseApp } from '@angular/fire/app';
-import { initializeApp } from 'firebase/app';
-import { Firestore } from 'firebase/firestore'; //este tengo dudas si sirva para algo
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { environment } from '../environments/environment';
 
 
 @NgModule({
@@ -31,8 +32,11 @@ import { Firestore } from 'firebase/firestore'; //este tengo dudas si sirva para
     SharedModule,
     MatSliderModule,
     MatPseudoCheckboxModule,
-    provideFirebaseApp(()=>initializeApp(environment.firebaseConfig)),
-    provideAuth(()=>getAuth()),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    AngularFireDatabaseModule,
     
 
   ],
