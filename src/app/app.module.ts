@@ -9,6 +9,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatPseudoCheckboxModule } from '@angular/material/core';
 
+//add firebase config
+import { environment } from 'src/environments/environment';
+import { provideAuth, getAuth } from '@angular/fire/auth';
+import { provideFirebaseApp } from '@angular/fire/app';
+import { initializeApp } from 'firebase/app';
+import { Firestore } from 'firebase/firestore';
+
+
 @NgModule({
   declarations: [
     AppComponent
@@ -18,7 +26,11 @@ import { MatPseudoCheckboxModule } from '@angular/material/core';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSliderModule,
-    MatPseudoCheckboxModule
+    MatPseudoCheckboxModule,
+    provideFirebaseApp(()=>initializeApp(environment.firebaseConfig)),
+    provideAuth(()=>getAuth()),
+    Firestore
+
   ],
   providers: [],
   bootstrap: [AppComponent]
